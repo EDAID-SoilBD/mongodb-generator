@@ -15,6 +15,9 @@ codes_list = ["G0" + str(i) for i in range(201, 501)]
 asd_list = ["0100" + str(i) for i in range(301, 601)]
 shuffle(asd_list)
 
+descriptions = {"Litter", "Anuales + RF 20-70 part emb", "Anual + RF20-70 emb", "Sandy soil", "Limestone soil",
+                "Silty soil", "Black earth soil", "Argillaceous soil", "Stony soil", "Peat soil", "Saline soil"}
+
 ITEMS_COUNT = 300
 
 for i in range(ITEMS_COUNT):
@@ -31,7 +34,7 @@ for i in range(ITEMS_COUNT):
     item = {
         "CODE": code,
         "PHOTOGRAPHS": "See JPG: " + code + "-SSC y " + code + "-U",
-        "DESCRIPTION": "???",
+        "DESCRIPTION": random.choice(descriptions),
         "COORDINATES X": randint(310000, 340000),
         "COORDINATES Y": randint(4050000, 4080000),
         "ALTITUDE": randint(300, 1000),
@@ -60,5 +63,5 @@ for i in range(ITEMS_COUNT):
         "SPECTRAL RESPONSE ": " See document: " + asd + ".asd"
     }
 
-    conn.SoilDB.Chiquito.insert_one(item)
+    conn.SoilDB.Data.insert_one(item)
     print(f"Inserting item {i}/{ITEMS_COUNT}", end="\r")
