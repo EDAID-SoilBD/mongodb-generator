@@ -63,7 +63,7 @@ for i in range(ITEMS_COUNT):
         "RESPUESTA ESPECTRAL": "Ver documento: " + asd + ".asd",
     }
 
-    conn.SoilDB.Chiquito.insert_one(item)
+    conn.SoilDB.Data.insert_one(item)
     print(f"Inserting item {i}/{ITEMS_COUNT}", end="\r")
 
     """
