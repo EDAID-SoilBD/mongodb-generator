@@ -3,21 +3,24 @@ from random import randint, uniform, shuffle
 from pymongo import MongoClient
 
 try:
-    conn = MongoClient()
+    conn = MongoClient(
+        "mongodb+srv://Ines-Diaz:CF2QDipwxkQNxwQr@edaid-soil.hflhi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    )
     print("Connected successfully!!!")
 except:
     print("Could not connect to MongoDB")
 
-'''
+"""
 Conexión con base y colección
-'''
+"""
 
 codes_list = ["G0" + str(i) for i in range(201, 501)]
 asd_list = ["0100" + str(i) for i in range(301, 601)]
 shuffle(asd_list)
 
+ITEMS_COUNT = 300
 
-for i in range(300):
+for i in range(ITEMS_COUNT):
     code = codes_list[i]
     a1 = randint(0, 10)
     a2 = randint(0, 10)
@@ -57,10 +60,13 @@ for i in range(300):
         "CARBONO ORGÁNICO": str(round(uniform(0.0, 10.0), 2)),
         "FACTOR C": round(uniform(0.0, 1.0), 2),
         "CONDUCTIVIDAD ELÉCTRICA": str(round(uniform(0.0, 0.5), 2)),
-        "RESPUESTA ESPECTRAL": "Ver documento: " + asd + ".asd"
+        "RESPUESTA ESPECTRAL": "Ver documento: " + asd + ".asd",
     }
 
-    '''
+    conn.SoilDB.Chiquito.insert_one(item)
+    print(f"Inserting item {i}/{ITEMS_COUNT}", end="\r")
+
+    """
     item = {
         "CODE": code,
         "PHOTOGRAPHS": "See JPG: " + code + "-SSC y " + code + "-U",
@@ -94,4 +100,4 @@ for i in range(300):
     }
 
     collection.insert_one(item)
-    '''
+    """
