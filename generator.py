@@ -1,4 +1,4 @@
-from random import randint, uniform, shuffle
+from random import randint, uniform, shuffle, choice
 
 from pymongo import MongoClient
 
@@ -34,7 +34,7 @@ for i in range(ITEMS_COUNT):
     item = {
         "CODE": code,
         "PHOTOGRAPHS": "See JPG: " + code + "-SSC y " + code + "-U",
-        "DESCRIPTION": random.choice(descriptions),
+        "DESCRIPTION": choice(descriptions),
         "COORDINATES X": randint(310000, 340000),
         "COORDINATES Y": randint(4050000, 4080000),
         "ALTITUDE": randint(300, 1000),
