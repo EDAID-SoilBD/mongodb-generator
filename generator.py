@@ -15,8 +15,16 @@ codes_list = ["G0" + str(i) for i in range(201, 501)]
 asd_list = ["0100" + str(i) for i in range(301, 601)]
 shuffle(asd_list)
 
-descriptions = {"Sandy soil", "Limestone soil", "Silty soil", "Black earth soil",
-                "Argillaceous soil", "Stony soil", "Peat soil", "Saline soil"}
+descriptions = [
+    "Sandy soil",
+    "Limestone soil",
+    "Silty soil",
+    "Black earth soil",
+    "Argillaceous soil",
+    "Stony soil",
+    "Peat soil",
+    "Saline soil",
+]
 
 ITEMS_COUNT = 300
 
@@ -60,7 +68,7 @@ for i in range(ITEMS_COUNT):
         "ORGANIC CARBON": str(round(uniform(0.0, 10.0), 2)),
         "C FACTOR": round(uniform(0.0, 1.0), 2),
         "ELECTRIC CONDUCTIVITY": str(round(uniform(0.0, 0.5), 2)),
-        "SPECTRAL RESPONSE ": " See document: " + asd + ".asd"
+        "SPECTRAL RESPONSE ": " See document: " + asd + ".asd",
     }
 
     conn.SoilDB.Data.insert_one(item)
