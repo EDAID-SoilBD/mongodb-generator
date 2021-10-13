@@ -15,8 +15,8 @@ codes_list = ["G0" + str(i) for i in range(201, 501)]
 asd_list = ["0100" + str(i) for i in range(301, 601)]
 shuffle(asd_list)
 
-descriptions = {"Litter", "Anuales + RF 20-70 part emb", "Anual + RF20-70 emb", "Sandy soil", "Limestone soil",
-                "Silty soil", "Black earth soil", "Argillaceous soil", "Stony soil", "Peat soil", "Saline soil"}
+descriptions = {"Sandy soil", "Limestone soil", "Silty soil", "Black earth soil",
+                "Argillaceous soil", "Stony soil", "Peat soil", "Saline soil"}
 
 ITEMS_COUNT = 300
 
