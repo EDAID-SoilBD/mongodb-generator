@@ -59,7 +59,7 @@ for i in range(ITEMS_COUNT):
         "TOTAL LIMES": l1 + l2,
         "CLAY": randint(0, 10),
         "K FACTOR": round(uniform(0.0, 1.0), 2),
-        "APPARENT DENSITY": round(uniform(0.0, 2.0), 2),
+        "BULK DENSITY": round(uniform(0.0, 2.0), 2),
         "AGGREGATE STABILITY": randint(30, 60),
         "PERMEABILITY": randint(0, 150),
         "FIELD CAPACITY": randint(10, 60),
